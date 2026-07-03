@@ -54,8 +54,27 @@ if "thread_id" not in st.session_state:
     st.session_state.thread_id=str(uuid.uuid4())
 
 #Streamlit UI
-st.title("🔎 LangChain - Chat with search")
+st.set_page_config(
+    page_title="Intelligent Search Agent",
+    page_icon="🧠",
+    layout="wide"
+)
 
+st.markdown("""
+# 🧠 Intelligent Search Agent
+### AI-powered search assistant using LLM + Web Retrieval + Reasoning
+
+---
+""")
+
+with st.expander("🧠 How this works"):
+    st.markdown("""
+    1. User enters query  
+    2. LLM understands intent  
+    3. Web search tool retrieves data  
+    4. Context is built  
+    5. Final response generated using LLM  
+    """)
 
 #Sidebar for settings
 st.sidebar.title("Settings")
