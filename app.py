@@ -100,7 +100,7 @@ if prompt:=st.chat_input(placeholder="What is Machine Learning?"):
         st.warning("⚠️ Please enter your GROQ API Key in the sidebar")
         st.stop()
 
-    llm=ChatGroq(groq_api_key=api_key,model_name="qwen/qwen3-32b",streaming=False)
+    llm=ChatGroq(groq_api_key=api_key,model_name="llama-3.1-8b-instant",streaming=False)
 
     tools=[arxivsearch,websearch]
     search_agent=create_react_agent(llm,tools,checkpointer=st.session_state.memory)
